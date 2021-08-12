@@ -30,7 +30,7 @@
     AOF流程和配置：
         （1）快照功能并不是非常耐久：如果Redis故障停机，那么服务器会丢失最新写入但没有来得及保存到快照中的那些数据。
         
-        （2）Redis增加了一个耐久的持久化方式，就是AOF持久化（append onlu file），将每一个指令记录进文件appendonlu.aof中
+        （2）Redis增加了一个耐久的持久化方式，就是AOF持久化（append only file），将每一个指令记录进文件appendonly.aof中
             （先写入os cache每隔一段时间fsync写入到磁盘。）
             
         （3）通过修改配置文件 #appendonly yes 
