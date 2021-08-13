@@ -29,7 +29,7 @@
     3.列表list
         常用命令：
             lpush key value[vlaye,....]  向列表左侧插入value
-            rpush key valye[value,....]  向列表右侧插入去拉也
+            rpush key valye[value,....]  向列表右侧插入value
             lpop key 获取左侧value
             rpop key 获取右侧value
             Stack栈 = lpush + lpop 实现了栈的后进先出
