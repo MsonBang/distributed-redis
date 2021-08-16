@@ -45,7 +45,7 @@
     
     4.集合set
         常用命令：
-            sadd key mumber[member...]
+            sadd key member[member...]
             smembers key 查看key对应的所有values
             srandmember key 3 随机获取3个元素
             sismember key value 查看是否存在于集合中

@@ -21,9 +21,9 @@
             daemonize yes
             pidfile "/var/run/redis-sentinel-26379.pid"
             logfile "26379.log"
-            dir "/usr/local/opt/redis@4.0/data"
+            dir "/usr/local/opt/redis@4.0/data" 或者 "/usr/local/var/db/redis"
             sentinel monitor mymaster 192.168.30.201 6379 2  #mymaster名字随便取，客户端访问时会用到，这个2是个数字，表示
-                当有多少个sentinel任务master节点失效时，(sentinel/2+1）master才算正式失效.
+                当有多少个sentinel任务master节点失效时，(sentinel/2+1）master才算正式失效
             
         （3）启动哨兵实例
             ./redis-sentinel sentinel-26379.conf
@@ -32,11 +32,11 @@
             ./redis-cli -p 26379
             info
          
-         (5)按照以上步骤，继续再搭建26380，26381两个哨兵。注意数字都要修改好。然后启动。最后哨兵集群就有三个。
+         (5)按照以上步骤，继续再搭建26380，26381两个哨兵。注意数字都要修改好。然后启动。最后哨兵集群就有三个
          
      4.哨兵集群启动后工作流程
         
-        （1）sentinel集群启动完毕后，哨兵集群的数据信息会写入到sentinel配置文件中（追加在文件最后面）。
+        （1）sentinel集群启动完毕后，哨兵集群的数据信息会写入到sentinel配置文件中（追加在文件最后面）
             例如 sentinel-26379.conf,如下所示：
             sentinel known-replica mymaster 192.168.30.201 6380   #从节点
             sentinel known-replica mymaster 192.168.30.201 6381   #从节点
